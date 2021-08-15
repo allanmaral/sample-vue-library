@@ -67,7 +67,7 @@ const buildFormats = [];
 if (!argv.format || argv.format === 'es') {
   const esConfig = {
     ...baseConfig,
-    input: 'src/index.ts',
+    input: 'src/index.esm.ts',
     output: {
       file: packageJson.module,
       format: 'esm',
@@ -136,64 +136,3 @@ if (!argv.format || argv.format === 'cjs') {
 }
 
 export default buildFormats;
-
-// export default {
-//   input: 'src/index.ts',
-//   output: [
-//     {
-//       format: 'cjs',
-//       file: packageJson.main,
-//       sourcemap: true
-//     },
-//     {
-//       file: packageJson.module,
-//       format: 'esm',
-//       sourcemap: true,
-//       exports: 'named'
-//     },
-//   ],
-//   plugins: [
-//     peerDepsExternal(),
-//     replace({ 
-//       preventAssignment: false,
-//       'process.env.NODE_ENV': JSON.stringify('production'),
-//     }),
-//     alias({
-//       entries: [
-//         {
-//           find: '@',
-//           replacement: `${path.resolve(projectRoot, 'src')}`,
-//         },
-//       ],
-//     }),
-//     vue({
-//       css: true,
-//       template: {
-//         isProduction: true,
-//       },
-//     }),
-//     resolve({
-//       extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
-//     }),
-//     commonjs(),
-//     typescript({
-//       typescript: ttypescript,
-//       useTsconfigDeclarationDir: true,
-//       emitDeclarationOnly: true,
-//     }),
-//     babel({
-//       exclude: 'node_modules/**',
-//       extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
-//       babelHelpers: 'bundled',
-//       presets: [
-//         [
-//           '@babel/preset-env',
-//           {
-//             ...babelPresetEnvConfig,
-//             targets: esbrowserslist,
-//           },
-//         ],
-//       ],
-//     }),
-//   ]
-// };

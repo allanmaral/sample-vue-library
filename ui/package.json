@@ -4,8 +4,17 @@
   "license": "MIT",
   "main": "lib/index.js",
   "module": "lib/index.esm.js",
+  "types": "lib/types/index.esm.d.ts",
+  "files": [
+    "lib/*",
+    "src/**/*.vue"
+  ],
   "scripts": {
-    "build": "rollup -c"
+    "prebuild": "rimraf ./lib",
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "build:cjs": "cross-env NODE_ENV=production rollup -c --format cjs",
+    "build:es": "cross-env NODE_ENV=production rollup -c --format es",
+    "postbuild": "rimraf ./lib/types/index.d.ts"
   },
   "peerDependencies": {
     "vue": "^2.6.12",
@@ -23,8 +32,10 @@
     "@rollup/plugin-replace": "^3.0.0",
     "@vue/compiler-sfc": "^3.2.2",
     "@zerollup/ts-transform-paths": "^1.7.18",
+    "cross-env": "^7.0.3",
     "minimist": "^1.2.5",
     "postcss": "^6.0",
+    "rimraf": "^3.0.2",
     "rollup": "^2.52.8",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-typescript2": "^0.30.0",
