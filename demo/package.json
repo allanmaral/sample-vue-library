@@ -8,6 +8,9 @@
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
   },
+  "workspaceDependencies": {
+    "@heart/ui": "^1.0.0"
+  },
   "dependencies": {
     "vue": "^2.6.12",
     "vue-demi": "^0.11.3",
