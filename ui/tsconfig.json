@@ -1,14 +1,44 @@
 {
   "compilerOptions": {
-    "declarationDir": "lib",
-    "target": "es5",
-    "module": "es2015",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "declaration": true,
-    "importHelpers": true,
-    "strict": true,
-    "experimentalDecorators": true
+      "target": "esnext",
+      "module": "esnext",
+      "strict": true,
+      "declaration": true,
+      "declarationDir": "lib/types",
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "importHelpers": true,
+      "moduleResolution": "node",
+      "experimentalDecorators": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true,
+      "sourceMap": true,
+      "baseUrl": ".",
+      "newLine": "lf",
+      "types": [
+          "node",
+          "vue"
+      ],
+      "paths": {
+          "@/*": [
+              "src/*"
+          ]
+      },
+      "plugins": [
+          {
+              "transform":"@zerollup/ts-transform-paths",
+              "exclude": ["*"]
+          }
+      ],
+      "lib": [
+          "esnext",
+          "dom",
+          "dom.iterable",
+          "scripthost"
+      ]
   },
-  "include": ["src/**/*.ts", "src/**/*.vue"]
+  "exclude": [
+      "node_modules",
+      "lib"
+  ]
 }

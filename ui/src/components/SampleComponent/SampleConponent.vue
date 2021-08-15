@@ -1,24 +1,18 @@
 <template>
   <div class="sample-component-container">
-    <h2>{{ headingText }}</h2>
-    <h3>{{ bodyText }}</h3>
+    <h2>"headingText"</h2>
+    <h3>"bodyText"</h3>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Vue } from 'vue-property-decorator'
 
 @Component
-export default class SampleComponent extends Vue {
-  @Prop()
-  private headingText: string = "";
-
-  @Prop()
-  private bodyText: string = "";
-}
+export default class SampleComponent extends Vue {}
 </script>
 
-<style lang="css" scoped>
+<style scoped>
 .sample-component-container {
   padding: 40px;
   background-color: black;
