@@ -18,7 +18,7 @@ export default class SampleComponent extends Vue {
 }
 </script>
 
-<style>
+<style lang="css" scoped>
 .sample-component-container {
   padding: 40px;
   background-color: black;
