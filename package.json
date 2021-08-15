@@ -6,8 +6,8 @@
   "license": "MIT",
   "workspaces": {
     "packages": [
-      "ui",
-      "core"
+      "packages/ui",
+      "packages/core"
     ]
   },
   "scripts": {
@@ -18,7 +18,7 @@
     "postinstall": "yarn pkg:check",
     "prestart": "yarn && yarn bootstrap",
     "boot": "yarn prestart && yarn build",
-    "build": "lerna run build --ignore core --no-private --stream",
+    "build": "lerna run build --ignore @heart/core --no-private --stream",
     "bootstrap": "lerna bootstrap --use-workspaces",
     "lint": "lerna run lint --no-private --stream"
   },

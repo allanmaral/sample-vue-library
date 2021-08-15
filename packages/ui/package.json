@@ -10,12 +10,14 @@
     "src/**/*.vue"
   ],
   "scripts": {
-    "prebuild": "rimraf ./lib",
+    "prebuild": "yarn clean",
+    "prestart": "yarn clean",
     "start": "cross-env NODE_ENV=production rollup -cw --format es",
     "build": "cross-env NODE_ENV=production rollup -c",
     "build:cjs": "cross-env NODE_ENV=production rollup -c --format cjs",
     "build:es": "cross-env NODE_ENV=production rollup -c --format es",
-    "postbuild": "rimraf ./lib/types/index.d.ts"
+    "postbuild": "rimraf ./lib/types/index.d.ts",
+    "clean": "rimraf ./lib"
   },
   "peerDependencies": {
     "vue": "^2.6.12",
