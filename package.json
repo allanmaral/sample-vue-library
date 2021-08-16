@@ -27,6 +27,11 @@
     "@manypkg/cli": "^0.18.0",
     "cross-env": "^7.0.3",
     "lerna": "^4.0.0",
-    "rimraf": "^3.0.2"
+    "rimraf": "^3.0.2",
+    "vue": "^2.6.4",
+    "vuetify": "^2.5.8"
+  },
+  "resolutions": {
+    "**/vue": "^2.6.4"
   }
 }

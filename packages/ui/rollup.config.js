@@ -26,6 +26,12 @@ const babelPresetEnvConfig = require('./babel.config')
 
 const argv = minimist(process.argv.slice(2));
 
+const external = [
+  'vue',
+  'vuetify',
+  'vuetify/lib'
+]
+
 const baseConfig = {
   input: 'src/index.ts',
   plugins: {
@@ -68,6 +74,7 @@ if (!argv.format || argv.format === 'es') {
   const esConfig = {
     ...baseConfig,
     input: 'src/index.esm.ts',
+    external,
     output: {
       file: packageJson.module,
       format: 'esm',
@@ -105,6 +112,7 @@ if (!argv.format || argv.format === 'es') {
 if (!argv.format || argv.format === 'cjs') {
   const cjsConfig = {
     ...baseConfig,
+    external,
     output: {
       compact: true,
       file: packageJson.main,

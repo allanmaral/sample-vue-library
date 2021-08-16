@@ -2,9 +2,6 @@
   <div>
     <v-app>
       <v-main>
-        <v-container>
-          <sample-component></sample-component>
-        </v-container>
         <v-container>Hello world</v-container>
         <v-container>
           <hc-btn color="primary">test</hc-btn>
@@ -19,14 +16,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue-demi'
-import {SampleComponent} from '@heart/ui'
-import HcBtn from './components/hc-btn/HcBtn.vue'
+import { HcBtn } from '@heart/ui'
 
 export default defineComponent({
   name: 'App',
   components: {
-    HcBtn,
-    SampleComponent
+    HcBtn
   }
 })
 </script>

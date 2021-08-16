@@ -6,9 +6,11 @@
 </template>
 
 <script lang="ts">
-import { ref, defineComponent } from 'vue-demi'
+import { ref, defineComponent } from '@vue/composition-api'
+import { VBtn } from 'vuetify/lib'
 export default defineComponent({
-  name: 'BcBtn',
+  name: 'HcBtn',
+  components: { VBtn },
   props: {
     elevation: {
       type: String,

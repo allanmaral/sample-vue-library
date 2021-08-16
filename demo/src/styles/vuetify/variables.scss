@@ -1,9 +1,1 @@
-$btn-border-radius: 0px;
-$btn-font-weight: 500;
-$btn-sizes: (
-    'x-small': 30,
-    'small': 40,
-    'default': 50,
-    'large': 60,
-    'x-large': 70
-  )
+@import '@heart/ui/src/styles/theme.scss';
