@@ -32,7 +32,7 @@ export default defineConfig({
     })
   ],
   optimizeDeps: {
-    exclude: ['demi-vue']
+    exclude: ['vue-demi']
   },
   server: {
     port: 8080
