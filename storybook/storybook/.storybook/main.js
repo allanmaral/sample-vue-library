@@ -9,7 +9,7 @@ module.exports = {
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-a11y", // <== add this to get a11y working
+    "@storybook/addon-a11y",
   ],
   // add this function to tweak the webpack config
   webpackFinal: async (config, { configType }) => {
