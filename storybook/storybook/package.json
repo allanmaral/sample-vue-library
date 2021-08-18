@@ -9,6 +9,9 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
+  "workspaceDependencies": {
+    "@heart/ui": "^1.0.0"
+  },
   "dependencies": {
     "core-js": "^3.6.5",
     "sass": "1.32.0",

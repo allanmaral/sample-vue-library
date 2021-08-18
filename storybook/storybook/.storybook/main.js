@@ -3,8 +3,8 @@ const path = require('path')
 module.exports = {
   "stories": [
     "../src/**/*.stories.mdx",
-    "../src/**/*.stories.@(js|jsx|ts|tsx)"
-    // "../../../packages/ui/src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)",
+    "../../../packages/ui/src/**/*.stories.@(js|jsx|ts|tsx)"
   ],
   addons: [
     "@storybook/addon-links",
@@ -21,7 +21,7 @@ module.exports = {
 
     // THIS is the tricky stuff!
     config.module.rules.push({
-      test: /\.sass$/,
+      test: /.(scss|sass)$/,
       use: [
         'style-loader',
         'css-loader',
@@ -35,7 +35,7 @@ module.exports = {
           },
         },
       ],
-      include: path.resolve(__dirname, '../'),
+      // include: path.resolve(__dirname, '..'),
     })
 
     // return the updated Storybook configuration
