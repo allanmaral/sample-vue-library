@@ -7,6 +7,7 @@
   "workspaces": {
     "packages": [
       "demo",
+      "storybook",
       "packages/ui",
       "packages/core"
     ]
@@ -18,6 +19,7 @@
     "postinstall": "yarn pkg:check",
     "prestart": "yarn && yarn bootstrap",
     "bootstrap": "lerna bootstrap --use-workspaces",
+    "storybook": "yarn --cwd ./storybook storybook",
     "lint": "lerna run lint --no-private --stream",
     "pkg": "manypkg run",
     "pkg:check": "manypkg check",
@@ -32,6 +34,8 @@
     "vuetify": "^2.5.8"
   },
   "resolutions": {
-    "**/vue": "^2.6.4"
+    "**/vue": "^2.6.4",
+    "@babel/core": "7.13.15",
+    "@babel/preset-env": "7.13.15"
   }
 }
